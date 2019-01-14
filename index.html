@@ -14,7 +14,7 @@
     <h1>Lista zakupów</h1>
     <div style="margin-bottom: 10px;">
       <input type="text" class="form-control col-md-3" placeholder="do kupienia" style="display: inline-block;" />
-      <button type="button" class="btn btn-secondary">+</button>
+      <button type="button" class="btn btn-secondary" onclick="addTolist()">+</button>
     </div>
     <ul class="list-group col-md-3">
       <li class="list-group-item">
@@ -29,5 +29,14 @@
     </ul>
   </div>
 </body>
+
+<script>
+  function addTolist() {
+    let elementToAdd = $('input').val();
+    let shoppingList = $('ul');
+
+    shoppingList.prepend('<li>' + elementToAdd + '</li>');
+  }
+</script>
 
 </html>
