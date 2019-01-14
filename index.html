@@ -35,7 +35,8 @@
     let elementToAdd = $('input').val();
     let shoppingList = $('ul');
 
-    shoppingList.prepend('<li>' + elementToAdd + '</li>');
+    shoppingList.prepend('<li class="list-group-item"><input type="checkbox" style="margin-right: 10px;"/>' +
+      elementToAdd + '</li>');
   }
 </script>
 
