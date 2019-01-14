@@ -33,10 +33,16 @@
 <script>
   function addTolist() {
     let elementToAdd = $('input').val();
+
+    if (elementToAdd == "")
+      return;
+
     let shoppingList = $('ul');
 
     shoppingList.prepend('<li class="list-group-item"><input type="checkbox" style="margin-right: 10px;"/>' +
       elementToAdd + '</li>');
+
+    $('input').val("");
   }
 </script>
 
