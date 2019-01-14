@@ -13,7 +13,7 @@
   <div class="container">
     <h1>Lista zakupów</h1>
     <div style="margin-bottom: 10px;">
-      <input type="text" class="form-control col-md-3" placeholder="do kupienia" style="display: inline-block;" />
+      <input id="addInput" type="text" class="form-control col-md-3" placeholder="do kupienia" style="display: inline-block;" />
       <button type="button" class="btn btn-secondary" onclick="addTolist()">+</button>
     </div>
     <ul class="list-group col-md-3">
@@ -42,7 +42,9 @@
     shoppingList.prepend('<li class="list-group-item"><input type="checkbox" style="margin-right: 10px;"/>' +
       elementToAdd + '</li>');
 
-    $('input').val("");
+    let input = $('#addInput');
+    input.val("");
+    input.focus();
   }
 </script>
 
