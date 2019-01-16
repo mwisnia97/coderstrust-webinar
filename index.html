@@ -1,2 +1,43 @@
 <!DOCTYPE html>
-<html></html>
+<html>
+
+<head>
+    <title>Lista zakupów</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="offset-4">
+            <h1>Lista zakupów</h1>
+            <div style="margin-bottom: 15px;">
+                <input type="text" class="form-control col-5" placeholder="wpisz element" style="display: inline-block;" />
+                <button type="button" class="btn btn-success" onclick="addToList()">dodaj</button>
+            </div>
+            <ul class="list-group col-5">
+                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Jabłka</li>
+                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Pomarańcze</li>
+                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Goździki</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    function addToList() {
+        let input = $('input');
+
+        if (input.val() == '')
+            return;
+
+        let shoppingList = $('ul');
+        shoppingList.prepend('<li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" />' +
+            input.val() + '</li>');
+
+        input.val("");
+    }
+</script>
+
+</html>
