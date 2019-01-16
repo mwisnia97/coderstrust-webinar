@@ -17,27 +17,34 @@
                 <button type="button" class="btn btn-success" onclick="addToList()">dodaj</button>
             </div>
             <ul class="list-group col-5">
-                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Jabłka</li>
-                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Pomarańcze</li>
-                <li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" /> Goździki</li>
+                <label for="pole1"><li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" id="pole1"> Jabłka</li></label>
+                <label for="pole2"><li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" id="pole2"/> Pomarańcze</li></label>
+                <label for="pole3"><li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" id="pole3"/> Goździki</li></label>
             </ul>
         </div>
     </div>
 </body>
 
 <script>
+    function trim(x){
+        return x.replace(/^\s+|\s+$/g,'')
+    }
     function addToList() {
         let input = $('input');
-
+        if(trim(input.val()) == '')
+            return;
         if (input.val() == '')
             return;
-
         let shoppingList = $('ul');
         shoppingList.prepend('<li class="list-group-item"> <input type="checkbox" style="margin-right: 10px;" />' +
             input.val() + '</li>');
-
         input.val("");
     }
+    $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        addToList();
+    }
+    });
 </script>
 
 </html>
