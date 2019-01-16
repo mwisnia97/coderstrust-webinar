@@ -46,6 +46,16 @@
     input.val("");
     input.focus();
   }
+
+  $('li').click(e => {
+    let cb = e.target.children[0];
+    cb.checked = !cb.checked;
+    if (cb.checked) {
+      $(e.target).addClass('list-group-item-success');
+    } else {
+      $(e.target).removeClass('list-group-item-success');
+    }
+  });
 </script>
 
 </html>
